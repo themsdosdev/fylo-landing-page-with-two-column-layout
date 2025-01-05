@@ -1,0 +1,103 @@
+/** @format */
+@use "variables";
+
+@mixin desktop-view($width: 1440px, $height: unset, $font-size: unset) {
+  @media only screen and (min-width: 1440px) {
+    width: $width;
+    height: $height;
+    font-size: $font-size;
+  }
+}
+@mixin button {
+  background-color: variables.$Bright-Blue;
+  color: variables.$Light-Grayish-Blue;
+  font-family: variables.$Headings-font;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+  }
+}
+
+@mixin ilustration-desktop-view {
+  @media only screen and (min-width: 1440px) {
+    width: 640px;
+  }
+}
+
+@mixin sections-ilustration-desktop-view($gap, $row-reverse: false) {
+  @media only screen and (min-width: 1440px) {
+    display: flex;
+
+    @if $row-reverse == true {
+      flex-direction: row-reverse;
+    }
+    align-items: center;
+    gap: $gap;
+  }
+}
+
+@mixin form {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+
+  & input {
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid variables.$Light-Gray;
+  }
+
+  & input[type="text"] {
+    padding-left: 15px;
+  }
+
+  & input[type="text"]::placeholder {
+    color: variables.$Light-Gray;
+  }
+
+  & input[type="submit"] {
+    background-color: variables.$Bright-Blue;
+    color: variables.$Light-Grayish-Blue;
+    font-family: variables.$Headings-font;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+      filter: brightness(120%);
+    }
+  }
+}
+
+@mixin contact-container {
+  display: flex;
+  height: 20px;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: variables.$Light-Grayish-Blue;
+
+    &:hover {
+      color: variables.$Bright-Blue;
+    }
+  }
+}
+
+@mixin contact-desktop-view {
+  @media only screen and (min-width: 1440px) {
+
+    margin-left: 115px;
+}
+}
+

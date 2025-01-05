@@ -1,0 +1,87 @@
+/** @format */
+
+@use "variables";
+@use "mixins";
+
+.footer {
+  background-color: variables.$Very-Dark-Blue;
+  color: variables.$Light-Grayish-Blue;
+  padding: 65px 64px 25px 39px;
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__phone-container {
+    @include mixins.contact-container;
+    @include mixins.contact-desktop-view;
+  }
+
+  &__email-container {
+    margin-left: -5px;
+    @extend .footer__phone-container;
+    @include mixins.contact-desktop-view;
+  }
+}
+
+.footer {
+  &__navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 32px;
+    margin-bottom: 16px;
+
+    & :hover {
+      cursor: pointer;
+      color: variables.$Bright-Blue;
+    }
+  }
+}
+
+.footer {
+  &__social-media-container {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    gap: 15px;
+
+    .social-icon {
+      border: 1px solid variables.$Light-Grayish-Blue;
+      height: 28px;
+      width: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+        border-color: variables.$Bright-Blue;
+        color: variables.$Bright-Blue;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__logo {
+      margin-left: 115px;
+    }
+
+    &__navigation {
+      padding-top: 80px;
+      gap: 20px;
+      padding-right: 60px;
+    }
+
+    &__social-media-container {
+      padding: 100px 170px 72px 80px;
+    }
+  }
+}

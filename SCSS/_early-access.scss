@@ -1,0 +1,54 @@
+/** @format */
+@use "mixins";
+@use "variables";
+
+.eraly-acces {
+  background-color: variables.$Desaturated-Blue;
+  color: variables.$Light-Grayish-Blue;
+  padding: 58px 62px 69px 38px;
+
+  @include mixins.sections-ilustration-desktop-view(244px);
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+
+  &__description {
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin-bottom: 28px;
+  }
+
+  &__form {
+    @include mixins.form;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .eraly-acces {
+    padding-top: 80px;
+
+    &__title {
+      text-align: left;
+      margin-left: 115px;
+    }
+
+    &__description {
+      text-align: left;
+      margin: 0 115px 0px 115px;
+     
+    }
+
+    &__form {
+      padding-right: 70px;
+      width: 60%;
+
+      & input[type="submit"] {
+        width: 50%;
+      }
+    }
+  }
+}

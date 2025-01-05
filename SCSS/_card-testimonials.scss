@@ -1,0 +1,51 @@
+/** @format */
+@use "variables";
+
+.card-testimonials {
+  background-color: variables.$white;
+  width: 286px;
+  height: 180px;
+  padding: 24px 20px 20px 24px;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  &__icon-quotes {
+    margin-bottom: 8px;
+  }
+
+  &__quote {
+    font-size: 0.68em;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .avatar-container {   
+    display: flex;
+    margin-top: -6px;
+    &__avatar {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    &__name {
+      font-size: 0.69em;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    &__founder {
+      font-size: 0.45em;
+      color: variables.$Desaturated-Blue;
+      line-height: 0.5em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .card-testimonials {
+    margin: 0;
+  }
+}

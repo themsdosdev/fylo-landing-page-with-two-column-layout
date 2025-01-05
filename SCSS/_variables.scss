@@ -1,0 +1,25 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap");
+
+$Headings-font: "raleway", "sans-serif";
+$Body-font: "Open Sans", "sans-serif";
+$Font-size: 16px;
+
+
+
+// Primary
+
+$Very-Dark-Blue: hsl(243, 87%, 12%);
+$Desaturated-Blue: hsl(238, 22%, 44%);
+// Accent
+
+$Bright-Blue: hsl(224, 93%, 58%);
+$Moderate-Cyan: hsl(170, 45%, 43%);
+
+// Neutral
+
+$Light-Grayish-Blue: hsl(240, 75%, 98%);
+$Light-Gray: hsl(0, 0%, 75%);
+$Blue: hsl(228, 45%, 44%);
+$white: hsl(0, 0%, 100%);

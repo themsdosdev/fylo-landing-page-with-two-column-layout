@@ -1,0 +1,232 @@
+/** @format */
+
+@use "variables";
+@use "mixins";
+@use "card-testimonials";
+@use "early-access";
+@use "footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variables.$white;
+  font-family: variables.$Body-font;
+  font-size: variables.$Font-size;
+}
+
+.main-container {
+  width: 375px;
+  margin: 0 auto;
+  @include mixins.desktop-view();
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px 0;
+  margin-bottom: 100px;
+
+  &__logo {
+    width: 80px;
+    height: 25px;
+    @include mixins.desktop-view(170px);
+  }
+  &__navigation {
+    display: flex;
+    width: 167px;
+    font-size: 0.8em;
+    justify-content: space-between;
+
+    @include mixins.desktop-view(274px, unset, 1em);
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        color: variables.$Bright-Blue;
+      }
+    }
+  }
+}
+.header {
+  padding: 0 24px 182px;
+  background: {
+    image: url(../images/bg-curve-mobile.svg);
+    background-color: variables.$white;
+    repeat: no-repeat;
+    position-y: bottom;
+  }
+
+  @include mixins.sections-ilustration-desktop-view(38px, true);
+
+  &__illustration {
+    width: 100%;
+    margin-bottom: 40px;
+    @include mixins.ilustration-desktop-view();
+  }
+
+  .header-content {
+    &__title {
+      font-size: 1.5em;
+      font-family: variables.$Headings-font;
+      font-weight: 700;
+      text-align: center;
+      line-height: 35px;
+      margin-bottom: 30px;
+    }
+
+    &__description {
+      text-align: center;
+      font-size: 0.95em;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    background-image: url(../images/bg-curve-desktop.svg);
+    background-color: variables.$white;
+    height: 720px;
+
+    .header-content {
+      width: 590px;
+      &__title {
+        text-align: left;
+        font-size: 2.5em;
+        line-height: 60px;
+      }
+      &__description {
+        text-align: left;
+        font-size: 1.15em;
+      }
+      &__form {
+        flex-direction: row;
+        width: 540px;
+        height: 50px;
+        gap: 15px;
+      }
+
+      &__form input {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.header-content {
+  &__form {
+    @include mixins.form();
+  }
+}
+
+.details {
+  background-color: variables.$Light-Grayish-Blue;
+  height: 900px;
+  padding: 0 24px;
+  @include mixins.sections-ilustration-desktop-view(65px, true);
+
+  &__illustration {
+    width: 100%;
+    margin-bottom: 80px;
+    @include mixins.ilustration-desktop-view();
+  }
+
+  .details-content {
+    &__title {
+      font-size: 1em;
+      font-family: variables.$Headings-font;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &__description {
+      margin-bottom: 25px;
+      line-height: 20px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+.details-content {
+  &__link {
+    display: block;
+    width: 100%;
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: variables.$Moderate-Cyan;
+    position: relative;
+    text-decoration: none;
+    &:hover {
+      filter: opacity(80%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 1.5px;
+      background-color: variables.$Moderate-Cyan;
+      width: 43%;
+      margin: 0 auto;
+    }
+  }
+  &__arrow {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 4px;
+    left: 5px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .details {
+    &__illustration {
+      width: 550px;
+    }
+
+    .details-content {
+      height: 498;
+
+      &__title {
+        text-align: left;
+        font-size: 2.5em;
+      }
+      &__description {
+        width: 520px;
+        text-align: left;
+        font-size: 1em;
+        line-height: 25px;
+      }
+      &__link {
+        text-align: left;
+        &::after {
+          margin-left: 0;
+          width: 21.2%;
+        }
+      }
+    }
+  }
+}
+
+/* --------------------(Footer)------------------------*/
+.attribution {
+  font-size: 1em;
+  text-align: center;
+  margin: 20px 0 50px;
+}
+.attribution a {
+  color: variables.$Blue;
+  text-decoration: none;
+}
